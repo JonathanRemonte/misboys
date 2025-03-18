@@ -1,0 +1,63 @@
+
+.switch {
+    position: relative;
+    height: 40px;
+    width: 155px;
+    background: rgba(192, 191, 191, 0.25);
+    border-radius: 3px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+
+  .switch-label {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 75px;
+    line-height: 36px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.35);
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+  }
+  .switch-label:active {
+    font-weight: bold;
+  }
+
+  .switch-label-off {
+    padding-left: 2px;
+  }
+
+  .switch-label-on {
+    padding-right: 2px;
+  }
+
+  .switch-input {
+    display: none;
+  }
+  .switch-input:checked + .switch-label {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.65);
+    text-shadow: 0 1px rgba(255, 255, 255, 0.25);
+  }
+  .switch-input:checked + .switch-label-on ~ .switch-selection {
+    left: 79px;
+    /* Note: left: 50%; doesn't transition in WebKit */
+  }
+
+  .switch-selection {
+    position: absolute;
+    z-index: 1;
+    top: 1.5px;
+    left: 3px;
+    display: block;
+    width: 74px;
+    height: 36px;
+    border-radius: 3px;
+  /*   background-color: #65bd63; */
+    background-image: -webkit-linear-gradient(top, #87CEFA, #6495ED);
+  /*   -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2); */
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+    transition: left 0.25s ease-out;
+  }

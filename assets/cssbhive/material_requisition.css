@@ -1,0 +1,254 @@
+
+:root {
+    --main-bg-color: #009d63;
+    --main-text-color: #009d63;
+    --second-text-color: #bbbec5;
+    --second-bg-color: #c1efde;
+  }
+  
+  .primary-text {
+    color: var(--main-text-color);
+  }
+  
+  .second-text {
+    color: var(--second-text-color);
+  }
+  
+  .primary-bg {
+    background-color: var(--main-bg-color);
+  }
+  
+  .secondary-bg {
+    background-color: var(--second-bg-color);
+  }
+  
+  .rounded-full {
+    border-radius: 100%;
+  }
+  
+  #wrapper {
+    overflow-x: hidden;
+    background-image: linear-gradient(
+      to right,
+      #baf3d7,
+      #c2f5de,
+      #cbf7e4,
+      #d4f8ea,
+      #ddfaef
+    );
+   
+  }
+  
+  #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin 0.25s ease-out;
+    -moz-transition: margin 0.25s ease-out;
+    -o-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+  }
+  
+  #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+  }
+  
+  #sidebar-wrapper .list-group {
+    width: 15rem;
+  }
+  
+  #page-content-wrapper {
+    min-width: 100vw;
+  }
+  
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+  }
+  
+  #menu-toggle {
+    cursor: pointer;
+  }
+  
+  .list-group-item {
+    border: none;
+    padding: 20px 30px;
+  }
+  
+  .list-group-item.active {
+    background-color: transparent;
+    color: var(--main-text-color);
+    font-weight: bold;
+    border: none;
+  }
+  
+  @media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+  
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+  
+    #wrapper.toggled #sidebar-wrapper {
+      margin-left: -15rem;
+    }
+  }
+  .table-bordered th,
+  .table-bordered td {
+      border-right: 1px solid #dee2e6;    
+     
+  }
+tr.edit-row {
+  cursor: pointer;
+}
+
+/* add note */
+label, .additional-note {
+  display: inline;
+}
+/* #mr_table{
+  table-layout:fixed;
+} */
+#mr_table th,
+#mr_table td {
+  width: auto; /* Set to 'auto' to distribute the width evenly */
+  text-align: center;
+}
+
+/* footer */
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #f0f0f0;
+  margin-top: auto;
+  margin-bottom: 1px; 
+}
+
+.footer-line {
+  width: 50px;
+  height: 1px;
+  background-color: #333;
+  margin: 0 auto 7px auto;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 12px;
+  color: #555;
+}
+
+.social-links {
+  margin-top: 4px;
+}
+
+.social-links p {
+  display: inline-block;
+  margin: 0;
+}
+
+.social-links img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+p[data-tooltip] {
+  position: relative;
+}
+
+p[data-tooltip]:before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%; /* Position above the link */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Initially hidden */
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+p[data-tooltip]:hover:before {
+  opacity: 1; /* Show the tooltip on hover */
+  visibility: visible; /* Show the tooltip on hover */
+}
+/* end footer css */
+
+/* css for snackbar */
+#snackbar {
+  visibility: hidden;
+  width: 550px;
+  margin-left: -325px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 25px 15px;;
+  position: fixed;
+  z-index: 1;
+  left: 55%;
+  bottom: 300px;
+  font-size: 25px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  /* -webkit-animation: fadein 0.5s, fadeout 0.5s 1.5s; */
+  animation: fadein 0.5s, fadeout 0.5s 1.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 300px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 300px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 300px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 300px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+.vr {
+  width: 1px; 
+  background-color: #000000; 
+  height: 100%; 
+  margin: 0 20px; 
+
+}
+
+a:hover{
+  color:inherit;
+}
+.custom-file-uploader {
+  position: relative;
+  
+  input[type='file'] {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: default;
+  }
+}
+
