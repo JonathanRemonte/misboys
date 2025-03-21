@@ -52,6 +52,7 @@ $route['planfig'] = 'Auth/planfig';
 $route['plantarget'] = 'Auth/plantarget';
 $route['planalertProv'] = 'Auth/planalertProv';
 $route['findash'] = 'Auth/findash';
+$route['admindash'] = 'Auth/admindash';
 $route['casmon'] = 'Auth/casmon';
 $route['fingaa'] = 'Auth/fingaa';
 $route['srchgaa'] = 'Auth/srchgaa';
@@ -111,3 +112,7 @@ $route['userMR'] = 'StockController/userMR';
 
 
 $route['upload'] = 'StockController/uploadin';
+
+
+# Finance Cash Management
+$route['add_receipt'] = 'FinCashMan/add_receipt';

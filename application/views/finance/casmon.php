@@ -191,7 +191,7 @@
               <div class="col-4"></div>
               <div class="col-4">
                 <div class="row">
-                  <div class = "col" style="text-align: right;font-weight: bold;font-size:40px;">P 2,000,000.00</div>
+                  <div class = "col" style="text-align: right;font-weight: bold;font-size:40px;">P 1,000,000.00</div>
                   <button class = "col" style="text-align: right;font-weight: bold;font-size:40px;">+</button>
                   <button class = "col" style="text-align: right;font-weight: bold;font-size:40px;">pen</button>
                 </div>
@@ -204,14 +204,110 @@
             </div>
           </div>
         </div>
-    
-      <section>
-          
+      
+      <!-- Form for Create/Update -->
+      <section class="pt-3">
+        <h1>Add New Check</h1>
 
+          <!-- Display success message -->
+          <?php if ($this->session->flashdata('success')): ?>
+              <div class="alert alert-success"><?= $this->session->flashdata('success'); ?></div>
+          <?php endif; ?>
+          <!-- Display error message -->
+          <?php if ($this->session->flashdata('error')): ?>
+              <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
+          <?php endif; ?>
 
+          <div class="card border-primary">
+            <form class="p-4" action= "<?= base_url('add_receipt') ?>" method="POST" style="background-color: #e5eaf3;">
+              <!-- Start of Form -->
+              <!-- <div class="d-flex justify-content-evenly mb-2">
+                <div>
+                  <input type="radio" name="mop" id="ada">
+                  <label for="ada">ADA</label>
+                </div>
+                <div>
+                  <input type="radio" name="mop" id="check">
+                  <label for="check">Check</label>
+                </div>
+              </div> -->
+              <!-- <div class="row mb-2" hidden>
+                <label hidden>ID</label>
+                <input type="integer" id="casid" name="casid" class="form-control" placeholder="ID" required>
+              </div> -->
+              <div class="row mb-2">
+                  <label hidden>Date</label>
+                  <input type="text" id="casdate" name="casdate" class="form-control" placeholder="Date" required>
+              </div>
+              <div class="row mb-2">
+                  <label hidden>ORS</label>
+                  <input type="text" id="casors" name="casors" class="form-control" placeholder="ORS number" required>
+              </div>
+              <!-- <div class="row mb-2">
+                  <label hidden>DV</label>
+                  <input type="integer" id="casdv" name="casdv" class="form-control" placeholder="DV number" required>
+              </div>
+              <div class="row mb-2">
+                  <label hidden>Particulars</label>
+                  <input type="text" id="casparticulars" name="casparticulars" class="form-control" placeholder="Particulars" required>
+              </div>
+              <div class="row mb-2">
+                  <label hidden>Amount</label>
+                  <input type="integer" id="casamount" name="casamount" class="form-control" placeholder="Amount" required>
+              </div>
+              <div class="row mb-2">
+                  <label hidden>Tax</label>
+                  <input type="integer" id="castax" name="castax" class="form-control" placeholder="Tax" required>
+              </div>
+              <div class="row mb-2">
+                  <label hidden>Net Amount</label>
+                  <input type="integer" id="casnet" name="casnet" class="form-control" placeholder="Net Amount" required>
+              </div> -->
+
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="button" id="resetBtn" class="btn btn-secondary">Cancel</button>
+            </form>
+          </div>
       </section>
 
+      <!-- <section>
+        <div class="modal fade" id="wasmod" tabindex="-1" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog custom-modal modal-dialog-top">
+            <div class="modal-content">
+              <div class="modal-header btn btn-primary" onclick="showNextDiv()" style="background-color:#0077fd;">
+                <h5 class="modal-title" style="color:white;">Add Waste Record (Click the banner to add row)</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
 
+              <form id="wasterecord" class="row g-3 needs-validation" method="post" action="<?php echo site_url('Lgu/wasad'); ?>" onsubmit="return validateForm()">
+                <div class="modal-body small-text">
+
+                  allinfo
+                  <div class="col-12">
+                    <div class="row" style="padding-top:8px;">
+                      <div class="col-3">
+                        <input type="text" name="lgusid" class="form-control" value="" required>
+                        <div class="invalid-feedback" id="feed">Please, enter your $%^lgusid%$^&!</div>
+                      </div>
+                      <div class="col-3">
+                        <input type="text" name="lgnam" class="form-control" value="" required>
+                        <div class="invalid-feedback" id="feed">Please, enter your Name!</div>
+                      </div>
+                      <div class="col-3">
+                        <input type="text" name="lgu" class="form-control" value="" required>
+                        <div class="invalid-feedback" id="feed">Please, enter your @#$%LGU@#$!</div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section> -->
 
       <section>
         <!-- tab -->

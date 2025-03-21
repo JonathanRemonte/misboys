@@ -118,6 +118,9 @@
       <a class="nav-link collapsed" href="findash">
         <i class="bi bi-cash-stack"></i><span>Finance</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
+      <a class="nav-link collapsed" href="admindash">
+        <i class="bi bi-cash-stack"></i><span>Administrative</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
     </li><!-- End Tables Nav -->
     <?php } ?>
     <!-- FAD -->

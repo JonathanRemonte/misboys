@@ -734,6 +734,23 @@ public function findash(){
   $this->load->view('template/footer');
 }
 
+public function admindash(){
+  // $data2['actlguser']=$this->Auth_model->ActiveLgUser();
+  $data2['lgacc']=$this->Auth_model->getLgAcc();
+  $data2['lgres']=$this->Auth_model->getLgReg();
+  $data2['result9']=$this->Auth_model->getRecFoi();
+  $data2['resultx']=$this->Auth_model->Upcpd4recfoi();
+  $data['result8']=$this->Auth_model->getRecFoi0();
+  $data['resgayr']=$this->Auth_model->getGayr();
+  $data['resbrob']=$this->Auth_model->resBrob();
+  // $data['plan']=$this->Auth_model->getPlan();
+  // $data['plantar']=$this->Auth_model->getPlanTar();
+
+  $this->load->view('template/header',$data2);
+  $this->load->view('administrative/admindash',$data);
+  $this->load->view('template/footer');
+}
+
 public function casmon(){
   // $data2['actlguser']=$this->Auth_model->ActiveLgUser();
   $data2['lgacc']=$this->Auth_model->getLgAcc();
@@ -745,6 +762,15 @@ public function casmon(){
   $data['resbrob']=$this->Auth_model->resBrob();
   // $data['plan']=$this->Auth_model->getPlan();
   // $data['plantar']=$this->Auth_model->getPlanTar();
+
+
+  // Fetch receipts from `fincasman`
+  $this->load->model('Receipt_model');
+  $data['receipts'] = $this->Receipt_model->get_all_receipts();
+
+  // Display success/error messages from form submission
+  $data['success'] = $this->session->flashdata('success');
+  $data['error'] = $this->session->flashdata('error');
 
   $this->load->view('template/header',$data2);
   $this->load->view('finance/casmon',$data);
